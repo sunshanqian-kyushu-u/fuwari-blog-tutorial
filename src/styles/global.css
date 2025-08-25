@@ -1,0 +1,4 @@
+:root {
+    --page-bg: oklch(0.95 0.01 250);
+    --card-bg: rgba(255, 255, 255, 1);
+}

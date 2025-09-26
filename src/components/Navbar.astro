@@ -1,22 +1,20 @@
 ---
 import { Icon } from 'astro-icon/components'
+import { siteConfig } from '../config/site.config'
 ---
 
-<!-- <div class="max-w-[75rem] md:px-4 mx-auto top-0 sticky">
-    <div class="bg-[var(--card-bg)] md:h-[4.5rem] h-16 transition-all rounded-2xl rounded-t-none">
-        <a href="/" class="flex">
-                <Icon name="material-symbols:home-outline-rounded" 
-                class=""/>
-                <p class="">
-                    111
-                </p>
+<div class="sticky top-0 bg-[var(--card-bg)] md:h-[4.5rem] h-16 rounded-2xl rounded-t-none
+max-w-[1200px] mx-auto max-[1232px]:mx-4 max-md:mx-0 transition-all">
+    <div class="flex h-full items-center justify-between md:px-4 px-3.5">
+        <a href="/" class="flex items-center h-12 md:h-[3.25rem] px-4 md:px-5
+        rounded-md md:rounded-lg hover:bg-[var(--btn-bg-hover)] active:bg-[var(--btn-bg-active)] 
+        active:scale-95 transition-all">
+            <Icon name="material-symbols:home-outline-rounded" 
+            class="text-[var(--btn-text)] md:text-[1.75rem] text-[1.5rem] mb-1 transition-all"/>
+            <p class="text-[var(--btn-text)] md:text-[1rem] text-[0.95rem] font-bold 
+            md:ml-1.5 ml-[0.25rem] transition-all">
+                { siteConfig.name }
+            </p>
         </a>
     </div>
-</div> -->
-
-<div class="sticky top-0 bg-[var(--card-bg)] h-16 md:h-[4.5rem] transition-all rounded-2xl rounded-t-none
-         max-w-[1200px] mx-auto
-         max-[1232px]:mx-4
-         max-md:mx-0">
-
 </div>

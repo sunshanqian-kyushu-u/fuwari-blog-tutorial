@@ -1,6 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components'
-import { siteConfig } from '../config/site.config'
+import { siteConfig, NavbarLinks } from '../config/site.config'
 ---
 
 <div class="sticky top-0 bg-[var(--card-bg)] md:h-[4.5rem] h-16 rounded-2xl rounded-t-none
@@ -10,11 +10,25 @@ max-w-[1168px] mx-auto max-[1200px]:mx-4 max-md:mx-0 transition-all">
         rounded-md md:rounded-lg hover:bg-[var(--btn-bg-hover)] active:bg-[var(--btn-bg-active)] 
         active:scale-95 transition-all">
             <Icon name="material-symbols:home-outline-rounded" 
-            class="text-[var(--btn-text)] md:text-[1.75rem] text-[1.5rem] mb-1 transition-all"/>
-            <p class="text-[var(--btn-text)] md:text-[1rem] text-[0.95rem] font-bold 
-            md:ml-1.5 ml-[0.25rem] transition-all">
+            class="text-[var(--btn-text)] md:text-[28px] text-[25px] mb-1 transition-all"/>
+            <p class="text-[var(--btn-text)] md:text-[15px] text-[13px] font-bold 
+            md:ml-[7px] ml-[5px] transition-all">
                 { siteConfig.name }
             </p>
         </a>
+        <div class="flex">
+            {
+            NavbarLinks.map((link) => (
+                link.enabled && <a href={ link.url } target={ link.external ? "_blank" : null } 
+                class="">
+                    <p class="">
+                        { link.name }
+                        { link.external && <Icon name="fa6-solid:arrow-up-right-from-square"
+                        class=""/>}
+                    </p>
+                </a>
+            ))
+            }
+        </div>
     </div>
 </div>

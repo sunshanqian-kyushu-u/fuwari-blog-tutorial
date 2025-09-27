@@ -17,20 +17,16 @@ max-w-[1168px] mx-auto max-[1200px]:mx-4 max-md:mx-0 transition-all">
             </p>
         </a>
         <div class="flex max-md:hidden">
-            {
-            NavbarLinks.map((link) => (
+            { NavbarLinks.map((link) => (
                 link.enabled && <a href={ link.url } target={ link.external ? "_blank" : null } 
                 class="flex items-center h-11 px-5 rounded-lg hover:bg-[var(--btn-bg-hover)] 
                 active:bg-[var(--btn-bg-active)] active:scale-95 group transition-all">
-                    <p class="text-[15px] font-bold group-hover:text-[var(--btn-text)] 
-                    transition-all">
-                        { link.name }
-                    </p>
+                    <p class="text-[15px] font-bold text-[var(--btn-text)] 
+                    group-hover:text-[var(--btn-text-hover)] transition-all">{ link.name }</p>
                     { link.external && <Icon name="fa6-solid:arrow-up-right-from-square"
                     class="text-[13px] ml-[3px] mb-[3px] text-[var(--navbar-github-icon)]"/>}
                 </a>
-            ))
-            }
+            )) }
         </div>
     </div>
 </div>

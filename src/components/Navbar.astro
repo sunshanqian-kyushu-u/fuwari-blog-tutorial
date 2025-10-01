@@ -28,5 +28,24 @@ max-w-[1168px] mx-auto max-[1200px]:mx-4 max-md:mx-0 transition-all">
                 </a>
             )) }
         </div>
+        <button class="flex w-10 h-10 items-center justify-center rounded-lg active:scale-95
+        hover:bg-[var(--btn-bg-hover)] active:bg-[var(--btn-bg-active)] group transition-all">
+            <Icon id="theme-btn" name="material-symbols:radio-button-partial-outline" class={`
+            md:text-xl text-base text-[var(--btn-text)] group-hover:text-[var(--btn-text-hover)] 
+            transition-all`}/>
+        </button>
     </div>
 </div>
+<script>
+    document.getElementById("theme-btn")?.addEventListener("click", () => {
+        const htmlEl = document.documentElement;
+        const currentTheme = htmlEl.getAttribute("data-theme");
+        if (currentTheme === "light") {
+            htmlEl.setAttribute("data-theme", "dark");
+            localStorage.setItem("theme", "dark");
+        } else {
+            htmlEl.setAttribute("data-theme", "light");
+            localStorage.setItem("theme", "light");
+        }
+    });
+</script>

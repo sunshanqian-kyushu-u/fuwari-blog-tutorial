@@ -30,9 +30,15 @@ max-w-[1168px] mx-auto max-[1200px]:mx-4 max-md:mx-0 transition-all">
         </div>
         <button id="theme-btn" class="flex w-10 h-10 items-center justify-center rounded-lg active:scale-95
         hover:bg-[var(--btn-bg-hover)] active:bg-[var(--btn-bg-active)] group transition-all">
+            <Icon name="material-symbols:wb-sunny-outline-rounded" class={`
+            md:text-xl text-base text-[var(--btn-text)] group-hover:text-[var(--btn-text-hover)] 
+            absolute opacity-[var(--opacity-light)] transition-all`}/>
+            <Icon name="material-symbols:dark-mode-outline-rounded" class={`
+            md:text-xl text-base text-[var(--btn-text)] group-hover:text-[var(--btn-text-hover)] 
+            absolute opacity-[var(--opacity-dark)] transition-all`}/>
             <Icon name="material-symbols:radio-button-partial-outline" class={`
             md:text-xl text-base text-[var(--btn-text)] group-hover:text-[var(--btn-text-hover)] 
-            transition-all`}/>
+            absolute opacity-[var(--opacity-auto)] transition-all`}/>
         </button>
     </div>
 </div>
@@ -43,6 +49,9 @@ max-w-[1168px] mx-auto max-[1200px]:mx-4 max-md:mx-0 transition-all">
         if (currentTheme === "light") {
             htmlEl.setAttribute("data-theme", "dark");
             localStorage.setItem("theme", "dark");
+        } else if (currentTheme === "dark") {
+            htmlEl.setAttribute("data-theme", "auto");
+            localStorage.setItem("theme", "auto");
         } else {
             htmlEl.setAttribute("data-theme", "light");
             localStorage.setItem("theme", "light");

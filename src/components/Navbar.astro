@@ -42,10 +42,8 @@ max-w-[1168px] mx-auto max-[1200px]:mx-4 max-md:mx-0 transition-all">
         const currentTheme = htmlEl.getAttribute("data-theme");
         if (currentTheme === "light") {
             htmlEl.setAttribute("data-theme", "dark");
-            localStorage.setItem("theme", "dark");
         } else {
             htmlEl.setAttribute("data-theme", "light");
-            localStorage.setItem("theme", "light");
         }
     });
 </script>

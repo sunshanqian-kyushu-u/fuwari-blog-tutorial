@@ -28,18 +28,26 @@ max-w-[1168px] mx-auto max-[1200px]:mx-4 max-md:mx-0 transition-all">
                 </a>
             )) }
         </div>
-        <button id="theme-btn" class="flex w-10 h-10 items-center justify-center rounded-lg active:scale-95
-        hover:bg-[var(--btn-bg-hover)] active:bg-[var(--btn-bg-active)] group transition-all">
-            <Icon name="material-symbols:wb-sunny-outline-rounded" class={`
-            md:text-xl text-base text-[var(--btn-text)] group-hover:text-[var(--btn-text-hover)] 
-            absolute opacity-[var(--opacity-light)] transition-all`}/>
-            <Icon name="material-symbols:dark-mode-outline-rounded" class={`
-            md:text-xl text-base text-[var(--btn-text)] group-hover:text-[var(--btn-text-hover)] 
-            absolute opacity-[var(--opacity-dark)] transition-all`}/>
-            <Icon name="material-symbols:radio-button-partial-outline" class={`
-            md:text-xl text-base text-[var(--btn-text)] group-hover:text-[var(--btn-text-hover)] 
-            absolute opacity-[var(--opacity-auto)] transition-all`}/>
-        </button>
+        <div class="flex items-center">
+            <button id="color-btn" class="flex w-10 h-10 items-center justify-center rounded-lg active:scale-95
+            hover:bg-[var(--btn-bg-hover)] active:bg-[var(--btn-bg-active)] group transition-all">
+                <Icon name="material-symbols:palette-outline" class={`
+                md:text-xl text-base text-[var(--btn-text)] group-hover:text-[var(--btn-text-hover)] 
+                transition-all`}/>
+            </button>
+            <button id="theme-btn" class="flex w-10 h-10 items-center justify-center rounded-lg active:scale-95
+            hover:bg-[var(--btn-bg-hover)] active:bg-[var(--btn-bg-active)] group transition-all">
+                <Icon name="material-symbols:wb-sunny-outline-rounded" class={`
+                md:text-xl text-base text-[var(--btn-text)] group-hover:text-[var(--btn-text-hover)] 
+                absolute opacity-[var(--opacity-light)] transition-all`}/>
+                <Icon name="material-symbols:dark-mode-outline-rounded" class={`
+                md:text-xl text-base text-[var(--btn-text)] group-hover:text-[var(--btn-text-hover)] 
+                absolute opacity-[var(--opacity-dark)] transition-all`}/>
+                <Icon name="material-symbols:radio-button-partial-outline" class={`
+                md:text-xl text-base text-[var(--btn-text)] group-hover:text-[var(--btn-text-hover)] 
+                absolute opacity-[var(--opacity-auto)] transition-all`}/>
+            </button>
+        </div>
     </div>
     <div id="theme-menu" class="absolute right-0 mt-1.5 p-2 bg-[var(--card-bg)] rounded-2xl shadow-xl
     -translate-y-1 opacity-0 pointer-events-none max-md:hidden transition-all">
@@ -70,6 +78,10 @@ max-w-[1168px] mx-auto max-[1200px]:mx-4 max-md:mx-0 transition-all">
             <p class="font-semibold ml-2 text-[var(--btn-text-auto)] group-hover:text-[var(--btn-text-hover)] 
             transition-all">System</p>
         </button>
+    </div>
+    <div id="color-menu" class="absolute right-0 mt-1.5 p-2 bg-[var(--card-bg)] rounded-2xl shadow-xl
+    h-20 w-20 max-md:hidden transition-all">
+
     </div>
 </div>
 

@@ -14,6 +14,14 @@
     --opacity-auto: 1;
     --opacity-light: 0;
     --opacity-dark: 0;
+
+    --btn-bg-auto: var(--btn-bg-hover);
+    --btn-bg-light: transparent;
+    --btn-bg-dark: transparent;
+
+    --btn-text-auto: var(--btn-text-hover);
+    --btn-text-light: var(--btn-text);
+    --btn-text-dark: var(--btn-text);
 }
 
 [data-theme="light"] {
@@ -31,6 +39,14 @@
     --opacity-auto: 0;
     --opacity-light: 1;
     --opacity-dark: 0;
+
+    --btn-bg-auto: transparent;
+    --btn-bg-light: var(--btn-bg-hover);
+    --btn-bg-dark: transparent;
+
+    --btn-text-auto: var(--btn-text);
+    --btn-text-light: var(--btn-text-hover);
+    --btn-text-dark: var(--btn-text);
 }
 
 [data-theme="dark"] {
@@ -48,4 +64,12 @@
     --opacity-auto: 0;
     --opacity-light: 0;
     --opacity-dark: 1;
+
+    --btn-bg-auto: transparent;
+    --btn-bg-light: transparent;
+    --btn-bg-dark: var(--btn-bg-hover);
+
+    --btn-text-auto: var(--btn-text);
+    --btn-text-light: var(--btn-text);
+    --btn-text-dark: var(--btn-text-hover);
 }

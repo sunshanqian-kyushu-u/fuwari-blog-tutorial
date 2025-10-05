@@ -13,25 +13,9 @@
 }
 
 [data-theme="light"] {
-    --page-bg: oklch(0.95 0.01 250);
-    --card-bg: rgba(255, 255, 255, 1);
-
-    --btn-bg-hover: oklch(0.95 0.025 250);
-    --btn-bg-active: oklch(0.98 0.01 250);
-    --btn-text-hover: oklch(0.70 0.14 250);
-
-    --btn-text: rgba(0, 0, 0, 0.75);
-    --navbar-github-icon: rgba(0, 0, 0, 0.2);
+    color-scheme: light;
 }
 
 [data-theme="dark"] {
-    --page-bg: oklch(0.16 0.014 250);
-    --card-bg: oklch(0.23 0.015 250);
-
-    --btn-bg-hover: oklch(0.30 0.035 250);
-    --btn-bg-active: oklch(0.27 0.025 250);
-    --btn-text-hover: oklch(0.75 0.14 250);
-
-    --btn-text: rgba(255, 255, 255, 0.75);
-    --navbar-github-icon: rgba(255, 255, 255, 0.2);
+    color-scheme: dark;
 }

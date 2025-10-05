@@ -26,6 +26,26 @@
     --btn-text-dark: var(--btn-text);
 }
 
+@media (prefers-color-scheme: light) {
+    :root {
+        --color-slider: linear-gradient(to right, oklch(0.80 0.10 0), 
+            oklch(0.80 0.10 30), oklch(0.80 0.10 60), oklch(0.80 0.10 90), 
+            oklch(0.80 0.10 120), oklch(0.80 0.10 150), oklch(0.80 0.10 180), 
+            oklch(0.80 0.10 210), oklch(0.80 0.10 240), oklch(0.80 0.10 270), 
+            oklch(0.80 0.10 300), oklch(0.80 0.10 330), oklch(0.80 0.10 360));
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+        --color-slider: linear-gradient(to right, oklch(0.70 0.10 0), 
+            oklch(0.70 0.10 30), oklch(0.70 0.10 60), oklch(0.70 0.10 90), 
+            oklch(0.70 0.10 120), oklch(0.70 0.10 150), oklch(0.70 0.10 180), 
+            oklch(0.70 0.10 210), oklch(0.70 0.10 240), oklch(0.70 0.10 270), 
+            oklch(0.70 0.10 300), oklch(0.70 0.10 330), oklch(0.70 0.10 360));
+  }
+}
+
 [data-theme="light"] {
 
     --page-bg: oklch(0.95 0.01 var(--hue));
@@ -49,11 +69,19 @@
     --btn-text-auto: var(--btn-text);
     --btn-text-light: var(--btn-text-hover);
     --btn-text-dark: var(--btn-text);
+
+    --color-slider: linear-gradient(to right, oklch(0.80 0.10 0), 
+        oklch(0.80 0.10 30), oklch(0.80 0.10 60), oklch(0.80 0.10 90), 
+        oklch(0.80 0.10 120), oklch(0.80 0.10 150), oklch(0.80 0.10 180), 
+        oklch(0.80 0.10 210), oklch(0.80 0.10 240), oklch(0.80 0.10 270), 
+        oklch(0.80 0.10 300), oklch(0.80 0.10 330), oklch(0.80 0.10 360));
 }
 
 [data-theme="dark"] {
 
-    --page-bg: oklch(0.16 0.014 var(--hue));
+    color-scheme: dark;
+
+    /* --page-bg: oklch(0.16 0.014 var(--hue));
     --card-bg: oklch(0.23 0.015 var(--hue));
 
     --btn-bg-hover: oklch(0.30 0.035 var(--hue));
@@ -73,5 +101,25 @@
 
     --btn-text-auto: var(--btn-text);
     --btn-text-light: var(--btn-text);
-    --btn-text-dark: var(--btn-text-hover);
+    --btn-text-dark: var(--btn-text-hover); */
+
+    --color-slider: linear-gradient(to right, oklch(0.70 0.10 0), 
+        oklch(0.70 0.10 30), oklch(0.70 0.10 60), oklch(0.70 0.10 90), 
+        oklch(0.70 0.10 120), oklch(0.70 0.10 150), oklch(0.70 0.10 180), 
+        oklch(0.70 0.10 210), oklch(0.70 0.10 240), oklch(0.70 0.10 270), 
+        oklch(0.70 0.10 300), oklch(0.70 0.10 330), oklch(0.70 0.10 360));
+}
+
+.color-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    display: block;
+}
+
+.color-slider::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    background: var(--color-slider);
+    /* height: 1.5rem;
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.25rem; */
 }

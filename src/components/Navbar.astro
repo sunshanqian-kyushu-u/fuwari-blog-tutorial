@@ -80,20 +80,20 @@ max-w-[1168px] mx-auto max-[1200px]:mx-4 max-md:mx-0 transition-all">
         </button>
     </div>
     <div id="color-menu" class="absolute right-0 mt-1.5 p-2 bg-[var(--card-bg)] rounded-2xl shadow-xl
-    max-md:hidden transition-all">
+    -translate-y-1 opacity-0 pointer-events-none max-md:hidden transition-all">
         <div class="flex items-center h-10 w-[270px] before:w-1 before:h-4 before:ml-2
         before:bg-[var(--btn-text-hover)] before:rounded-md">
             <p class="ml-2 text-[15px] select-none font-bold text-[var(--btn-text)]">Theme Color</p>
-            <button class="ml-2 flex items-center justify-center w-6 h-6 bg-[var(--btn-bg-hover)]
+            <button id="color-reset-btn" class="ml-2 flex items-center justify-center w-6 h-6 bg-[var(--btn-bg-hover)]
             rounded-md">
                 <Icon name="fa6-solid:arrow-rotate-left" class={`text-[var(--btn-text-hover)]
                 text-[13px]`}/>
             </button>
-            <p class="flex items-center justify-center ml-auto mr-2 w-9 h-6 select-none 
+            <p id="color-value" class="flex items-center justify-center ml-auto mr-2 w-9 h-6 select-none 
             text-[var(--btn-text-hover)] bg-[var(--btn-bg-hover)] rounded-md text-[13px]
-            font-bold">250</p>
+            font-bold"></p>
         </div>
-        <input type="range" min="0" max="360" value="250" class="color-slider">
+        <input id="color-slider" type="range" min="0" max="360" value="250" class="color-slider">
     </div>
 </div>
 
@@ -166,4 +166,43 @@ max-w-[1168px] mx-auto max-[1200px]:mx-4 max-md:mx-0 transition-all">
     document.getElementById("theme-menu")?.addEventListener("mouseleave", () => {
         hidePanel(themeTimer, document.getElementById("theme-menu")!);
     });
+
+    const colorTimer = { current: null } as TimerRef;
+
+    document.getElementById("color-btn")?.addEventListener("mouseenter", () => {
+        showPanel(colorTimer, document.getElementById("color-menu")!);
+    });
+
+    document.getElementById("color-btn")?.addEventListener("mouseleave", () => {
+        hidePanel(colorTimer, document.getElementById("color-menu")!);
+    });
+
+    document.getElementById("color-menu")?.addEventListener("mouseenter", () => {
+        showPanel(colorTimer, document.getElementById("color-menu")!);
+    });
+
+    document.getElementById("color-menu")?.addEventListener("mouseleave", () => {
+        hidePanel(colorTimer, document.getElementById("color-menu")!);
+    });
+
+    const color = localStorage.getItem("color");
+    if (color) {
+        document.documentElement.style.setProperty("--hue", color);
+        (document.getElementById("color-slider") as HTMLInputElement).value = color;
+        document.getElementById("color-value")!.textContent = color;
+    } else {
+        document.documentElement.style.setProperty("--hue", "250");
+        localStorage.setItem("color", "250");
+    }
+
+    document.getElementById("color-slider")!.addEventListener("input", function (e) {
+
+        const color = (e.target as HTMLInputElement).value;
+
+        localStorage.setItem("color", color);
+
+        document.documentElement.style.setProperty("--hue", color);
+        document.getElementById("color-value")!.textContent = color;
+    });
+
 </script>

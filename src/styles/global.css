@@ -95,13 +95,34 @@
 .color-slider {
     -webkit-appearance: none;
     width: 100%;
+    padding: 8px;
+    background-color: transparent;
     display: block;
 }
 
 .color-slider::-webkit-slider-runnable-track {
     -webkit-appearance: none;
     background: var(--color-slider);
-    /* height: 1.5rem;
+    height: 1.5rem;
     border-radius: 0.25rem;
-    padding: 0.25rem 0.25rem; */
+    padding: 0.25rem 0.25rem;
+}
+
+.color-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 0.5rem;
+    height: 1rem;
+    border-radius: 0.125rem;
+    background: rgba(255, 255, 255, 0.7);
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.slider::-webkit-slider-thumb:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.slider::-webkit-slider-thumb:active {
+    background: rgba(255, 255, 255, 0.6);
 }

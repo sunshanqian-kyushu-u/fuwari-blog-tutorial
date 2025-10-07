@@ -185,16 +185,9 @@ max-w-[1168px] mx-auto max-[1200px]:mx-4 max-md:mx-0 transition-all">
         hidePanel(colorTimer, document.getElementById("color-menu")!);
     });
 
-    const color = localStorage.getItem("color");
-    if (color) {
-        document.documentElement.style.setProperty("--hue", color);
-        (document.getElementById("color-slider") as HTMLInputElement).value = color;
-        document.getElementById("color-value")!.textContent = color;
-    } else {
-        localStorage.setItem("color", "250");
-        (document.getElementById("color-slider") as HTMLInputElement).value = "250";
-        document.getElementById("color-value")!.textContent = "250";
-    }
+    const color = localStorage.getItem("color")!;
+    (document.getElementById("color-slider") as HTMLInputElement).value = color;
+    document.getElementById("color-value")!.textContent = color;
 
     document.getElementById("color-slider")?.addEventListener("input", function (e) {
 

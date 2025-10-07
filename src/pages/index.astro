@@ -13,6 +13,13 @@ import Navbar from '../components/Navbar.astro';
 				document.documentElement.setAttribute("data-theme", "auto");
 				localStorage.setItem("theme", "auto");
 			}
+			const color = localStorage.getItem("color");
+			if (color) {
+				document.documentElement.style.setProperty("--hue", color);
+			} else {
+				document.documentElement.style.setProperty("--hue", "250");
+				localStorage.setItem("color", "250");
+			}
 		</script>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />

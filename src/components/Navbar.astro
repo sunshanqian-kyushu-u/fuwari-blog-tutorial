@@ -209,4 +209,18 @@ max-w-[1168px] mx-auto max-[1200px]:mx-4 max-md:mx-0 transition-all">
         document.getElementById("color-value")!.textContent = "250";
     });
 
+    document.getElementById("color-btn")!.addEventListener("click", function () {
+
+        const color = localStorage.getItem("color")!;
+
+        let colorInt = parseInt(color, 10);
+
+        colorInt = (Math.ceil((colorInt + 1) / 60) * 60) % 360;
+
+        localStorage.setItem("color", colorInt.toString());
+        document.documentElement.style.setProperty("--hue", colorInt.toString());
+        (document.getElementById("color-slider")! as HTMLInputElement).value = colorInt.toString();
+        document.getElementById("color-value")!.textContent = colorInt.toString();
+    });
+
 </script>

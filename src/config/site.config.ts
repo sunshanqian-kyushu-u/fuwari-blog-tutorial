@@ -1,9 +1,13 @@
 type SiteConfig = {
     name: string
+    bannerlink: string
+    bannercredit: string
 }
 
 export const siteConfig: SiteConfig = {
     name: "Fuwari", 
+    bannerlink: "https://www.pixiv.net/artworks/111024784",
+    bannercredit: "空天/NEO TOKYO NOIR 01",
 }
 
 type Link = {

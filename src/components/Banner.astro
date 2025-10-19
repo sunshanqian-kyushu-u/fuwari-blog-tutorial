@@ -3,16 +3,11 @@ import { Image } from 'astro:assets';
 import BannerImage from "../assets/banner.png"
 ---
 
-<div class="absolute top-0 w-full h-[800px] max-md:h-[400px] max-[480px]:h-[300px] 
+<div class="absolute top-0 w-full h-[680px] max-md:h-[380px] max-[480px]:h-[320px] 
 overflow-hidden z-10 transition-all">
-    <Image src={ BannerImage } alt="" class={`w-[3840px] h-[1020px] object-none
-    -translate-y-24`}/>
+    <Image src={ BannerImage } alt="" class={`absolute w-[3840px] h-[1020px] max-w-none
+    left-1/2 -translate-x-1/2 -translate-y-56
+    max-md:w-[1920px] max-md:h-[510px] max-md:-translate-y-20
+    max-[480px]:w-[1536px] max-[480px]:h-[408px] max-[480px]:-translate-y-12
+    transition-all`}/>
 </div>
-
-
-<!-- <div class="absolute top-0 w-full h-[800px] overflow-hidden z-10 transition-all">
-    <Image src={ BannerImage } alt="" class={`w-[3840px] h-[1020px] object-none
-    -translate-y-24`}/>
-</div> -->
-
-

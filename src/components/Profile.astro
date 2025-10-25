@@ -2,7 +2,7 @@
 import { Icon } from "astro-icon/components";
 import { Image } from 'astro:assets';
 import ProfileImage from "../assets/avatar.png";
-import { siteConfig } from "../config/site.config";
+import { siteConfig, ProfileLinks } from "../config/site.config";
 ---
 
 <div class="relative bg-[var(--card-bg)] rounded-2xl p-3 flex flex-col items-center">
@@ -21,4 +21,17 @@ import { siteConfig } from "../config/site.config";
     <p class="mt-1.5 px-2 text-center text-neutral-400">
         { siteConfig.intro }
     </p>
+    <div class="grid grid-cols-5 w-full px-2.5 mt-1.5">
+        {ProfileLinks.map(link => (
+            <div class="aspect-square flex items-center justify-center">
+                <a href={ link.url } target="_blank" 
+                class={`w-10 h-10 rounded-lg flex items-center justify-center
+                bg-[var(--btn-regular-bg)] group hover:bg-[var(--btn-regular-bg-hover)]
+                active:bg-[var(--btn-regular-bg-active)] active:scale-95 transition-all
+                ${!link.enabled ? "pointer-events-none opacity-50" : ""}`}>
+                    <Icon name={ link.icon } class={`text-[1.5rem] text-[var(--btn-content)]`}></Icon>
+                </a>
+            </div>
+        ))}
+    </div>
 </div>
